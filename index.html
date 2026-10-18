@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sunnie Darling — Art by Sunnie Anand</title>
+<meta name="description" content="A gallery of paintings, ink works, and feminist collage by Sunnie Anand." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Outfit:wght@300;400;500&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #fff7ec;
+    --ink: #2b1a2f;
+    --soft: #6e5a6f;
+    --pink: #e4417a;
+    --saffron: #f5a623;
+    --teal: #17807f;
+    --tangerine: #f0642f;
+    --lilac: #cdb8f4;
+    --blush: #fde3e9;
+    --butter: #fff0c7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Outfit', sans-serif; font-weight: 300; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+  .script { font-family: 'Caveat', cursive; font-weight: 700; }
+
+  /* Header */
+  .masthead { position: sticky; top: 0; z-index: 10; background: rgba(255,247,236,0.9); backdrop-filter: blur(8px); }
+  .masthead-inner { max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .wordmark { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 1.35rem; text-decoration: none; }
+  .wordmark span { color: var(--pink); }
+  nav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+  nav a { text-decoration: none; font-size: 0.86rem; padding: 6px 14px; border-radius: 999px; border: 1.5px solid var(--ink); transition: background .2s, color .2s; }
+  nav a:hover { background: var(--ink); color: var(--paper); }
+
+  /* Hero */
+  .intro { position: relative; max-width: 1240px; margin: 0 auto; padding: 72px 24px 88px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; }
+  .blob { position: absolute; border-radius: 50%; filter: blur(2px); z-index: -1; opacity: .85; }
+  .blob.b1 { width: 340px; height: 340px; background: var(--butter); top: 20px; left: -80px; }
+  .blob.b2 { width: 220px; height: 220px; background: var(--blush); top: 260px; left: 38%; }
+  .blob.b3 { width: 280px; height: 280px; background: #dff1ee; top: 40px; right: -60px; }
+  .hello { display: inline-block; font-size: 0.95rem; background: var(--ink); color: var(--paper); padding: 6px 14px; border-radius: 999px; margin-bottom: 22px; }
+  .intro h1 { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(3.2rem, 9vw, 6.6rem); line-height: 0.95; letter-spacing: -0.02em; }
+  .intro h1 em { font-style: italic; font-weight: 400; color: var(--pink); }
+  .byline { margin-top: 14px; font-size: 2rem; color: var(--teal); transform: rotate(-2deg); display: inline-block; }
+  .statement { margin-top: 26px; max-width: 32em; font-size: 1.12rem; }
+  .statement p + p { margin-top: 0.9em; }
+  .statement strong { font-weight: 500; background: linear-gradient(transparent 60%, var(--butter) 60%); }
+  .intro-photo { position: relative; background: #fff; padding: 14px 14px 52px; transform: rotate(2.5deg); box-shadow: 0 18px 40px rgba(43,26,47,.16); }
+  .intro-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+  .intro-photo figcaption { position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-family: 'Caveat', cursive; font-size: 1.5rem; }
+  .intro-photo::before { content: ""; position: absolute; top: -12px; left: 50%; width: 110px; height: 28px; transform: translateX(-50%) rotate(-3deg); background: rgba(245,166,35,.55); }
+
+  /* Rooms */
+  .band { padding: 80px 0; }
+  .band.saffron { background: var(--butter); }
+  .band.blush { background: var(--blush); }
+  .room { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+  .room-head { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 10px 24px; margin-bottom: 44px; }
+  .pill { display: inline-block; font-size: 0.85rem; padding: 5px 14px; border-radius: 999px; background: var(--ink); color: var(--paper); margin-bottom: 12px; }
+  .room-head h2 { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1; letter-spacing: -0.01em; }
+  .room-head h2 em { font-style: italic; font-weight: 400; }
+  .room-head .note { font-family: 'Caveat', cursive; font-size: 1.7rem; color: var(--tangerine); transform: rotate(-2deg); }
+
+  /* Featured installation */
+  .feature { display: grid; grid-template-columns: 1.55fr 1fr; gap: 36px; align-items: start; }
+  .feature-main .frame { transform: rotate(-1deg); }
+  .feature-main img { width: 100%; aspect-ratio: 2/1; object-fit: cover; }
+  .feature-meta h3 { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 2.2rem; }
+  .facts { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .facts span { background: #fff; border: 1.5px solid var(--ink); border-radius: 999px; padding: 4px 12px; font-size: 0.9rem; }
+  .process { margin-top: 26px; display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 14px; }
+  .process figure { background: #fff; padding: 6px 6px 8px; box-shadow: 0 6px 16px rgba(43,26,47,.12); }
+  .process figure:nth-child(odd) { transform: rotate(-2deg); }
+  .process figure:nth-child(even) { transform: rotate(2deg); }
+  .process img { aspect-ratio: 1/1; object-fit: cover; }
+  .process figcaption { font-family: 'Caveat', cursive; font-size: 1.15rem; text-align: center; margin-top: 2px; }
+
+  /* Pinned prints */
+  .grid { columns: 3 270px; column-gap: 40px; }
+  .work { break-inside: avoid; margin-bottom: 52px; }
+  .frame { position: relative; background: #fff; padding: 12px; box-shadow: 0 12px 28px rgba(43,26,47,.14); transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s; }
+  .frame::before { content: ""; position: absolute; top: -11px; left: 50%; width: 84px; height: 24px; transform: translateX(-50%) rotate(-4deg); background: rgba(205,184,244,.75); }
+  .work:nth-child(3n+1) .frame { transform: rotate(-1.6deg); }
+  .work:nth-child(3n+2) .frame { transform: rotate(1.2deg); }
+  .work:nth-child(3n) .frame { transform: rotate(-0.6deg); }
+  .work:nth-child(4n+2) .frame::before { background: rgba(245,166,35,.6); }
+  .work:nth-child(4n+3) .frame::before { background: rgba(228,65,122,.45); }
+  .work:nth-child(4n) .frame::before { background: rgba(23,128,127,.4); }
+  .work button:hover .frame, .work button:focus-visible .frame { transform: rotate(0) scale(1.02); box-shadow: 0 20px 44px rgba(43,26,47,.2); }
+  .frame img { width: 100%; height: auto; background: #f4ece2; min-height: 120px; }
+  .label { margin-top: 16px; }
+  .label .t { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 1.15rem; }
+  .label .y { font-size: 0.9rem; color: var(--soft); }
+  .label .m { font-size: 0.86rem; color: var(--soft); }
+
+  button.open { all: unset; cursor: zoom-in; display: block; width: 100%; }
+  button.open:focus-visible { outline: 3px solid var(--pink); outline-offset: 6px; }
+
+  /* Inquire */
+  .inquire { background: var(--ink); color: var(--paper); text-align: center; padding: 96px 24px; position: relative; overflow: hidden; }
+  .inquire::before, .inquire::after { content: ""; position: absolute; border-radius: 50%; opacity: .18; }
+  .inquire::before { width: 360px; height: 360px; background: var(--pink); left: -120px; top: -140px; }
+  .inquire::after { width: 300px; height: 300px; background: var(--saffron); right: -100px; bottom: -150px; }
+  .inquire .pill { background: var(--saffron); color: var(--ink); }
+  .inquire h2 { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1; }
+  .inquire h2 em { font-style: italic; font-weight: 400; color: var(--saffron); }
+  .inquire p { margin-top: 14px; font-size: 1.1rem; opacity: .9; }
+  .email { margin-top: 26px; display: inline-flex; gap: 14px; align-items: center; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1; }
+  .email code { font-family: 'Outfit', sans-serif; font-size: 1.05rem; }
+  .email button { font: inherit; font-weight: 500; background: var(--saffron); color: var(--ink); border: 0; border-radius: 999px; padding: 12px 22px; cursor: pointer; transition: transform .2s; }
+  .email button:hover { transform: translateY(-2px) rotate(-1deg); }
+
+  .quote-band { background: var(--teal); color: var(--paper); text-align: center; padding: 72px 24px; }
+  .quote-band p { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; }
+  .quote-band em { font-style: italic; font-weight: 400; color: var(--butter); }
+  .quote-band .script { display: inline-block; margin-top: 10px; font-size: 1.7rem; transform: rotate(-2deg); }
+  footer { text-align: center; padding: 26px 24px 36px; font-size: 0.88rem; color: var(--soft); }
+
+  /* Lightbox */
+  .lightbox { position: fixed; inset: 0; background: rgba(43,26,47,0.95); display: none; z-index: 50; align-items: center; justify-content: center; padding: 56px 72px 96px; }
+  .lightbox.on { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; background: #fff; padding: 10px; box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+  .lb-cap { position: absolute; left: 0; right: 0; bottom: 26px; text-align: center; color: var(--paper); padding: 0 24px; }
+  .lb-cap .t { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.25rem; }
+  .lb-cap .m { font-size: 0.88rem; opacity: .75; margin-top: 2px; }
+  .lb-btn { position: absolute; background: none; border: 0; color: var(--paper); font-size: 2rem; cursor: pointer; padding: 12px 16px; line-height: 1; }
+  .lb-btn:hover { color: var(--saffron); }
+  .lb-close { top: 12px; right: 14px; font-size: 1.6rem; }
+  .lb-prev { left: 10px; top: 50%; transform: translateY(-50%); }
+  .lb-next { right: 10px; top: 50%; transform: translateY(-50%); }
+
+  @media (max-width: 860px) {
+    .intro { grid-template-columns: 1fr; padding: 48px 16px 64px; gap: 48px; }
+    .intro-photo { max-width: 420px; margin: 0 auto; }
+    .feature { grid-template-columns: 1fr; }
+    .room, .masthead-inner { padding-left: 16px; padding-right: 16px; }
+    .band { padding: 64px 0; }
+    nav a { padding: 5px 10px; font-size: 0.78rem; }
+    .lightbox { padding: 48px 12px 110px; }
+    .lb-prev, .lb-next { top: auto; bottom: 22px; transform: none; }
+    .lb-cap { bottom: 70px; }
+  }
+  @media (max-width: 560px) { nav .hide-sm { display: none; } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="#top">sunnie <span>darling</span> ✨</a>
+    <nav>
+      <a href="#installation" class="hide-sm">installation</a>
+      <a href="#practice">daily practice</a>
+      <a href="#collage">collage</a>
+      <a href="#inquire">inquire</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="intro">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    <div>
+      <span class="hello">👋 welcome to the studio</span>
+      <h1>sunnie <em>darling</em></h1>
+      <span class="byline script">art by Sunnie Anand</span>
+      <div class="statement">
+        <p>Every morning, before anything else, <strong>I make something by hand.</strong> It's how I stay connected to what lasts.</p>
+        <p>I work across acrylic, watercolor, ink, oil pastel, and collage, and I build my feminist collages from vintage found imagery, taking old pictures apart and reassembling them into something new. Beauty, to me, isn't decoration. <strong>It's essential.</strong></p>
+      </div>
+    </div>
+    <figure class="intro-photo">
+      <img src="https://res.cloudinary.com/dndippf4k/image/upload/q_auto,f_auto,w_900/v1778355116/Screenshot_20250121_114852_Drive_oeyscb.jpg" alt="Sunnie Anand in the studio" />
+      <figcaption>in the studio</figcaption>
+    </figure>
+  </section>
+
+  <div class="band saffron" id="installation">
+    <section class="room">
+      <div class="room-head">
+        <div><span class="pill">🏛️ featured installation</span><h2>Taj <em>Mahal</em></h2></div>
+        <span class="note">74 canvases, one wall!</span>
+      </div>
+      <div class="feature">
+        <div class="feature-main" id="feature-main"></div>
+        <div class="feature-meta">
+          <h3>2005</h3>
+          <div class="facts"><span>acrylic on 74 canvases</span><span>4 plywood panels</span><span>15 × 30 ft</span><span>private commission</span><span>3 months to design</span><span>30 days to paint</span><span>5 installers, a 20 ft ladder &amp; 1 piano hinge</span></div>
+          <p class="script" style="font-size:1.45rem;margin-top:14px;color:var(--tangerine);transform:rotate(-1.5deg)">my first scaled painting, and more engineering than painting by the end!</p>
+          <div class="process" id="process"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="band" id="practice">
+    <section class="room">
+      <div class="room-head">
+        <div><span class="pill">🎨 daily practice</span><h2>painting, ink <em>&amp;</em> pastel</h2></div>
+        <span class="note">made before breakfast</span>
+      </div>
+      <div class="grid" id="grid-practice"></div>
+      <p style="text-align:center;margin-top:8px;color:var(--soft)">🌍 Works held in private collections in San Francisco, Atlanta, New York, Mumbai, and Washington DC.</p>
+    </section>
+  </div>
+
+  <div class="quote-band"><p>"Art is Love. <em>Love is All.</em>"</p><span class="script">— Sunnie</span></div>
+
+  <div class="band blush" id="collage">
+    <section class="room">
+      <div class="room-head">
+        <div><span class="pill">✂️ feminist collage</span><h2>found material, <em>radical assemblage</em></h2></div>
+        <span class="note">cut, rearrange, reclaim</span>
+      </div>
+      <div class="grid" id="grid-collage"></div>
+    </section>
+  </div>
+
+  <section class="inquire" id="inquire">
+    <span class="pill">💌 commissions &amp; prints</span>
+    <h2>inquire <em>within</em></h2>
+    <p>For commissions, prints, and original works, write to me.</p>
+    <div class="email">
+      <code id="email-text">tigersunnie [at] gmail [dot] com</code>
+      <button type="button" id="email-btn">send an email →</button>
+    </div>
+  </section>
+</main>
+
+<footer>art by Sunnie Anand · Los Angeles · © <span id="yr"></span></footer>
+
+<div class="lightbox" id="lb" role="dialog" aria-modal="true" aria-label="Artwork viewer">
+  <button class="lb-btn lb-close" id="lb-close" aria-label="Close">✕</button>
+  <button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous">‹</button>
+  <img id="lb-img" alt="" />
+  <button class="lb-btn lb-next" id="lb-next" aria-label="Next">›</button>
+  <div class="lb-cap"><div class="t" id="lb-t"></div><div class="m" id="lb-m"></div></div>
+</div>
+
+<script>
+const CDN = "https://res.cloudinary.com/dndippf4k/image/upload/";
+const img = (path, w) => CDN + "q_auto,f_auto,w_" + w + "/" + path;
+
+const install = { title: "Taj Mahal, installed", meta: "2005 · Acrylic, 74 canvases · 15 × 30 ft", path: "v1778436288/2005-10-29_20.07.50_finalcrop_rfyaut.jpg" };
+const process = [
+  { title: "Before the hang", meta: "Folded and ready", path: "v1778354965/2005-10-29_18.58.07_qdkhxn.jpg" },
+  { title: "On the ladder", meta: "Installation day", path: "v1778378353/CIMG0154_u9ugy8.jpg" },
+  { title: "Going up", meta: "Two stories, many hands", path: "v1778354969/2005-10-29_21.27.57_g1ug2a.jpg" },
+  { title: "Almost there", meta: "Final placement", path: "v1778354969/2005-10-29_21.29.09_fib2as.jpg" },
+  { title: "At scale", meta: "Large scale, on the wall", path: "v1778355120/Screenshot_20260417_021205_Keep_Notes_m1fnas.jpg" }
+];
+const practice = [
+  ["Birdman", 2024, "Acrylic", "24 × 36 in", "v1778355115/Screenshot_20250209_212759_WhatsAppBusiness_hiyej5.jpg"],
+  ["Galaxy Girl", 2022, "Mixed media, watercolor and collage", "9 × 11 in", "v1778355113/Screenshot_20221010_131537_qnhbs1.jpg"],
+  ["Halo", 2024, "Acrylic", "18 × 24 in", "v1778440909/IMG_20240826_112612_603_km8sfg.heic"],
+  ["Ink Orb", 2024, "Watercolor, ink, gold furniture paint, collage", "9 × 12 in", "v1778355125/Screenshot_20250430_124741_Instagram_dajfrn.jpg"],
+  ["Rootball", 2021, "Pen and ink", "11 × 14 in", "v1778441649/20230912_013119_2_rahege.jpg"],
+  ["Mini Tiger", 2023, "Ink, gold furniture paint, collage", "5 × 7 in", "v1778355111/IMG-20260408-WA0001_ghpqgw.jpg"],
+  ["Watercolor Pothos", 2019, "Watercolor and ink", "4 × 6 in", "v1778355109/IMG_20231103_000947_433_weeolz.jpg"],
+  ["Oil Pastel Garden", 2024, "Oil pastel", "8.5 × 11 in", "v1778440902/IMG_20231231_022153_317_un6aqd.jpg"],
+  ["7th Dimension (Map)", 2025, "Acrylic paint, house paint, caulk", "60 × 48 in", "v1778355125/Screenshot_20260508_021518_Photos_xgcn5c.jpg"],
+  ["Oil and Water", 2020, "Collage and ink", "6 × 9 in", "v1778441654/20231029_144125_2_kgg48d.jpg"],
+  ["Stones", 2023, "Ink", "9 × 11 in", "v1778440872/20220721_072522_gry6de.jpg"],
+  ["Aster", 2024, "Acrylic and house paint", "60 × 48 in", "v1778565984/Screenshot_20221225_231848_Gallery_1_b6sdcq.jpg"]
+];
+const collage = [
+  ["Tiger Woman", 2023, "Collage, ink, gouache", "9 × 11 in", "v1778355015/20250426_183901_rf2kgr.jpg"],
+  ["Emergence", 2020, "Collage, ink", "8 × 10 in", "v1778355004/20241117_233008_aiij0t.jpg"],
+  ["The Watcher", 2026, "Collage, paint", "4 × 6 in", "v1778355105/20260409_184942_rt6flb.jpg"],
+  ["Venus in the Jurassic", 2026, "Collage", "4 × 6 in", "v1778355125/Screenshot_20260508_015155_Photos_mbksuu.jpg"],
+  ["Rose Head", 2026, "Collage", "4 × 6 in", "v1778355124/Screenshot_20260508_015146_Photos_hvxswl.jpg"],
+  ["Ascendant", 2021, "Collage, watercolor, ink", "8 × 10 in", "v1778355113/Screenshot_20230908_092854_Instagram_m0wudk.jpg"],
+  ["Possession", 2023, "Collage, ink", "3 × 2 in", "v1778354988/20231202_012928_bmhshp.jpg"],
+  ["Witness", 2023, "Collage, ink, watercolor", "9 × 11 in", "v1778355119/Screenshot_20260225_222101_Photos_xdwxxx.jpg"],
+  ["Nice Try", 2026, "Collage", "6 × 6 in", "v1778381193/20260402_115414_itd63y.jpg"],
+  ["Fragmentation", 2022, "Collage, watercolor, ink", "9 × 12 in", "v1778440869/20220727_225805_olhm3i.jpg"],
+  ["Lost", 2023, "Ink, collage", "5 × 7 in", "v1778440879/20231008_181837_sdvbox.jpg"],
+  ["Warrior", 2020, "Collage", "9 × 11 in", "v1778440889/IMG_20231119_175921_032_j456ww.jpg"],
+  ["Dance", 2026, "Collage", "4 × 6 in", "v1778441824/20260506_121353_jtdzca.jpg"],
+  ["Oysters", 2025, "Collage", "5 × 7 in", "v1778355124/Screenshot_20260508_015124_Photos_urfhmj.jpg"],
+  ["Beauty", 2026, "Collage", "4 × 6 in", "v1778355106/20260401_160545_cmt0dx.jpg"],
+  ["For Palestine", 2024, "Collage", "9 × 11 in", "v1778355110/IMG_20231107_205026_891_rlm6dc.heic"],
+  ["Self Portrait", 2020, "Collage, pastel, ink", "18 × 24 in", "v1778440876/Screenshot_20230908_124804_Instagram_dpvpin.jpg"],
+  ["Cahiers in Paris", 2024, "Collage and vellum paper", "5 × 7 in", "v1778354980/20230527_175049_e2mlk1.jpg"]
+];
+
+// Lightbox sequence
+const seq = [];
+function addToSeq(title, meta, path) { seq.push({ title, meta, path }); return seq.length - 1; }
+
+function openBtn(i, inner, label) {
+  const b = document.createElement("button");
+  b.className = "open"; b.type = "button";
+  b.setAttribute("aria-label", "View " + label + " larger");
+  b.innerHTML = inner;
+  b.addEventListener("click", () => openLB(i));
+  return b;
+}
+
+// Featured
+(function () {
+  const i = addToSeq(install.title, install.meta, install.path);
+  document.getElementById("feature-main").appendChild(
+    openBtn(i, '<div class="frame"><img loading="lazy" src="' + img(install.path, 1400) + '" alt="Taj Mahal installation, 15 by 30 feet, made of 74 canvases"></div>', "Taj Mahal")
+  );
+  const p = document.getElementById("process");
+  process.forEach(s => {
+    const j = addToSeq(s.title, s.meta, s.path);
+    const fig = document.createElement("figure");
+    fig.appendChild(openBtn(j, '<img loading="lazy" src="' + img(s.path, 400) + '" alt="' + s.title + '">', s.title));
+    const c = document.createElement("figcaption"); c.textContent = s.title; fig.appendChild(c);
+    p.appendChild(fig);
+  });
+})();
+
+function renderGrid(id, items) {
+  const g = document.getElementById(id);
+  items.forEach(([t, y, m, s, path]) => {
+    const meta = y + " · " + m + " · " + s;
+    const i = addToSeq(t, meta, path);
+    const fig = document.createElement("figure");
+    fig.className = "work";
+    fig.appendChild(openBtn(i, '<div class="frame"><img loading="lazy" src="' + img(path, 800) + '" alt="' + t + ', ' + m.toLowerCase() + '"></div>', t));
+    const lab = document.createElement("figcaption");
+    lab.className = "label";
+    lab.innerHTML = '<span class="t">' + t + '</span>, <span class="y">' + y + '</span><div class="m">' + m + ' · ' + s + '</div>';
+    fig.appendChild(lab);
+    g.appendChild(fig);
+  });
+}
+renderGrid("grid-practice", practice);
+renderGrid("grid-collage", collage);
+
+// Lightbox
+const lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img");
+let cur = 0, lastFocus = null;
+function show(i) {
+  cur = (i + seq.length) % seq.length;
+  const s = seq[cur];
+  lbImg.src = img(s.path, 2000);
+  lbImg.alt = s.title;
+  document.getElementById("lb-t").textContent = s.title;
+  document.getElementById("lb-m").textContent = s.meta;
+}
+function openLB(i) { lastFocus = document.activeElement; show(i); lb.classList.add("on"); document.body.style.overflow = "hidden"; document.getElementById("lb-close").focus(); }
+function closeLB() { lb.classList.remove("on"); document.body.style.overflow = ""; if (lastFocus) lastFocus.focus(); }
+document.getElementById("lb-close").onclick = closeLB;
+document.getElementById("lb-prev").onclick = () => show(cur - 1);
+document.getElementById("lb-next").onclick = () => show(cur + 1);
+lb.addEventListener("click", e => { if (e.target === lb) closeLB(); });
+document.addEventListener("keydown", e => {
+  if (!lb.classList.contains("on")) return;
+  if (e.key === "Escape") closeLB();
+  if (e.key === "ArrowLeft") show(cur - 1);
+  if (e.key === "ArrowRight") show(cur + 1);
+});
+
+// Email, assembled on click so it isn't sitting in the page for scrapers
+document.getElementById("email-btn").addEventListener("click", () => {
+  const u = ["tiger", "sunnie"].join(""), d = ["gmail", "com"].join(".");
+  window.location.href = "mai" + "lto:" + u + "@" + d + "?subject=" + encodeURIComponent("Inquiry from sunniedarling.com");
+});
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
